@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
-import DisplayEmail from './Personal info display components/DisplayEmail'
 
+import DisplayEmail from './Personal info display components/DisplayEmail'
 import DisplayFirstName from './Personal info display components/DisplayFirstName'
 import DisplayLastName from './Personal info display components/DisplayLastName'
 import DisplayPhone from './Personal info display components/DisplayPhone'
