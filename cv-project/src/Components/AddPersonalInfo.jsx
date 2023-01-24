@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
+import DisplayEmail from './Personal info display components/DisplayEmail'
 
-import DisplayFirstName from './InfoDisplays/DisplayFirstName'
-import DisplayLastName from './InfoDisplays/DisplayLastName'
+import DisplayFirstName from './Personal info display components/DisplayFirstName'
+import DisplayLastName from './Personal info display components/DisplayLastName'
+import DisplayPhone from './Personal info display components/DisplayPhone'
 
 class AddPersonalInfo extends Component {
 	constructor() {
@@ -95,12 +97,7 @@ class AddPersonalInfo extends Component {
 							id="firstNameInput"
 							value={firstName.text}
 						/>
-						{/* <button type="submit" onClick={this.onSubmitFirstName}>
-							Add First Name
-						</button> */}
-
 						{/* ------------------------------------------ */}
-
 						<label htmlFor="lastNameInput">Last Name</label>
 						<input
 							onChange={this.handleChangeLastName}
@@ -108,12 +105,31 @@ class AddPersonalInfo extends Component {
 							id="lastNameInput"
 							value={lastName.text}
 						/>
+						{/* ------------------------------------------ */}
+						<label htmlFor="phoneNumInput">Phone Number</label>
+						<input
+							onChange={this.handleChangePhone}
+							type="text"
+							id="phoneNumInput"
+							value={phoneNum.text}
+						/>
+						{/* ------------------------------------------ */}
+						<label htmlFor="lastNameInput">Email</label>
+						<input
+							onChange={this.handleChangeEmail}
+							type="text"
+							id="emailInput"
+							value={email.text}
+						/>
+						{/* ------------------------------------------ */}
 						<button type="submit" onClick={this.onSubmitAllInfo}>
 							Add Info
 						</button>
 					</form>
 					<DisplayFirstName firstNameArr={firstNameArr} />
 					<DisplayLastName lastNameArr={lastNameArr} />
+					<DisplayPhone phoneNumArr={phoneNumArr} />
+					<DisplayEmail emailArr={emailArr} />
 				</div>
 			</>
 		)

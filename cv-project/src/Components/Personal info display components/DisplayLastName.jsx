@@ -1,4 +1,4 @@
-export default function DisplayFirstName(props) {
+export default function DisplayLastName(props) {
 	const { lastNameArr } = props
 
 	return (
