@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
 
-import DisplayEmail from './Personal info display components/DisplayEmail'
-import DisplayFirstName from './Personal info display components/DisplayFirstName'
-import DisplayLastName from './Personal info display components/DisplayLastName'
-import DisplayPhone from './Personal info display components/DisplayPhone'
+import DisplayEmail from './Display Components/DisplayEmail'
+import DisplayFirstName from './Display Components/DisplayFirstName'
+import DisplayLastName from './Display Components/DisplayLastName'
+import DisplayPhone from './Display Components/DisplayPhone'
 
 class AddPersonalInfo extends Component {
 	constructor() {

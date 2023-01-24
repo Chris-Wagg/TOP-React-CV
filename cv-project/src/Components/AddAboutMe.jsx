@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
+import uniqid from 'uniqid'
 
-import DisplayAboutMe from './About Me Components/DisplayAboutMe'
+import DisplayAboutMe from './Display Components/DisplayAboutMe'
 
 class AddAboutMe extends Component {
 	constructor() {
 		super()
 		this.state = {
-			aboutMeText: { text: '' },
+			aboutMeText: { text: '', id: uniqid() },
+			aboutMeArr: [],
 		}
 	}
 
@@ -14,6 +16,7 @@ class AddAboutMe extends Component {
 		this.setState({
 			aboutMeText: {
 				text: e.target.value,
+				id: this.state.aboutMeText.id,
 			},
 		})
 	}
@@ -21,12 +24,13 @@ class AddAboutMe extends Component {
 	onSubmitAboutMe = (e) => {
 		e.preventDefault()
 		this.setState({
-			aboutMeText: { text: '' },
+			aboutMeArr: this.state.aboutMeArr.concat(this.state.aboutMeText),
+			aboutMeText: { text: '', id: uniqid() },
 		})
 	}
 
 	render() {
-		const { aboutMeText } = this.state
+		const { aboutMeText, aboutMeArr } = this.state
 		return (
 			<>
 				<div>
@@ -44,7 +48,7 @@ class AddAboutMe extends Component {
 							Add About Me
 						</button>
 					</form>
-					<DisplayAboutMe aboutMeText={aboutMeText.text} />
+					<DisplayAboutMe aboutMeArr={aboutMeArr} />
 				</div>
 			</>
 		)
