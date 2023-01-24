@@ -109,7 +109,7 @@ class AddPersonalInfo extends Component {
 						<label htmlFor="phoneNumInput">Phone Number</label>
 						<input
 							onChange={this.handleChangePhone}
-							type="text"
+							type="tel"
 							id="phoneNumInput"
 							value={phoneNum.text}
 						/>
@@ -117,7 +117,7 @@ class AddPersonalInfo extends Component {
 						<label htmlFor="lastNameInput">Email</label>
 						<input
 							onChange={this.handleChangeEmail}
-							type="text"
+							type="email"
 							id="emailInput"
 							value={email.text}
 						/>
