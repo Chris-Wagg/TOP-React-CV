@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
 
-import DisplayEmail from './Display Components/DisplayEmail'
-import DisplayFirstName from './Display Components/DisplayFirstName'
-import DisplayLastName from './Display Components/DisplayLastName'
-import DisplayPhone from './Display Components/DisplayPhone'
+import DisplayFirstName from './Display Components/DisplayPersonalInfo'
 
 class AddPersonalInfo extends Component {
 	constructor() {
@@ -60,16 +57,10 @@ class AddPersonalInfo extends Component {
 		this.setState({
 			firstNameArr: this.state.firstNameArr.concat(this.state.firstName),
 			firstName: { text: '', id: uniqid() },
-		})
-		this.setState({
 			lastNameArr: this.state.lastNameArr.concat(this.state.lastName),
 			lastName: { text: '', id: uniqid() },
-		})
-		this.setState({
 			phoneNumArr: this.state.phoneNumArr.concat(this.state.phoneNum),
 			phoneNum: { text: '', id: uniqid() },
-		})
-		this.setState({
 			emailArr: this.state.emailArr.concat(this.state.email),
 			email: { text: '', id: uniqid() },
 		})
@@ -126,10 +117,12 @@ class AddPersonalInfo extends Component {
 							Add Info
 						</button>
 					</form>
-					<DisplayFirstName firstNameArr={firstNameArr} />
-					<DisplayLastName lastNameArr={lastNameArr} />
-					<DisplayPhone phoneNumArr={phoneNumArr} />
-					<DisplayEmail emailArr={emailArr} />
+					<DisplayFirstName
+						firstNameArr={firstNameArr}
+						lastNameArr={lastNameArr}
+						phoneNumArr={phoneNumArr}
+						emailArr={emailArr}
+					/>
 				</div>
 			</>
 		)
