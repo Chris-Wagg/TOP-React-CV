@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
 
-import DisplayAboutMe from './Display Components/DisplayAboutMe'
+import DisplayExperience from './Display Components/DisplayExperience'
 
 class AddExperience extends Component {
 	constructor() {
@@ -51,21 +51,15 @@ class AddExperience extends Component {
 		})
 	}
 
-	onSubmitAboutMe = (e) => {
+	onSubmitExperience = (e) => {
 		e.preventDefault()
 		this.setState({
 			startDateArr: this.state.startDateArr.concat(this.state.startDate),
 			startDate: { text: '', id: uniqid() },
-		})
-		this.setState({
 			endDateArr: this.state.endDateArr.concat(this.state.endDate),
 			endDate: { text: '', id: uniqid() },
-		})
-		this.setState({
 			roleArr: this.state.roleArr.concat(this.state.role),
 			role: { text: '', id: uniqid() },
-		})
-		this.setState({
 			aboutRoleArr: this.state.aboutRoleArr.concat(this.state.aboutRole),
 			aboutRole: { text: '', id: uniqid() },
 		})
@@ -80,7 +74,7 @@ class AddExperience extends Component {
 			role,
 			roleArr,
 			aboutRole,
-			aboutMeArr,
+			aboutRoleArr,
 		} = this.state
 		return (
 			<>
@@ -111,18 +105,23 @@ class AddExperience extends Component {
 						/>
 						{/* ------------------------------------------ */}
 						<label htmlFor="aboutRoleInput">About role</label>
-						<input
+						<textarea
 							onChange={this.handleChangeAboutRole}
-							type="text"
 							id="aboutRoleInput"
 							value={aboutRole.text}
-						/>
+							name="aboutRoleInput"
+						></textarea>
 						{/* ------------------------------------------ */}
-						<button type="submit" onClick={this.onSubmitAllInfo}>
+						<button type="submit" onClick={this.onSubmitExperience}>
 							Add Info
 						</button>
 					</form>
-					<DisplayAboutMe aboutMeArr={aboutMeArr} />
+					<DisplayExperience
+						startDateArr={startDateArr}
+						endDateArr={endDateArr}
+						roleArr={roleArr}
+						aboutRoleArr={aboutRoleArr}
+					/>
 				</div>
 			</>
 		)
