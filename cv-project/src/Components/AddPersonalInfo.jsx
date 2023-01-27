@@ -79,50 +79,65 @@ class AddPersonalInfo extends Component {
 		} = this.state
 		return (
 			<>
-				<div>
+				<div className="sides-container">
 					<form>
-						<label htmlFor="firstNameInput">First Name</label>
-						<input
-							onChange={this.handleChangeFirstName}
-							type="text"
-							id="firstNameInput"
-							value={firstName.text}
-						/>
-						{/* ------------------------------------------ */}
-						<label htmlFor="lastNameInput">Last Name</label>
-						<input
-							onChange={this.handleChangeLastName}
-							type="text"
-							id="lastNameInput"
-							value={lastName.text}
-						/>
-						{/* ------------------------------------------ */}
-						<label htmlFor="phoneNumInput">Phone Number</label>
-						<input
-							onChange={this.handleChangePhone}
-							type="tel"
-							id="phoneNumInput"
-							value={phoneNum.text}
-						/>
-						{/* ------------------------------------------ */}
-						<label htmlFor="lastNameInput">Email</label>
-						<input
-							onChange={this.handleChangeEmail}
-							type="email"
-							id="emailInput"
-							value={email.text}
-						/>
-						{/* ------------------------------------------ */}
-						<button type="submit" onClick={this.onSubmitAllInfo}>
-							Add Info
-						</button>
+						<fieldset>
+							<legend>Personal Info</legend>
+							<div className="input-main-container">
+								<div className="input-container">
+									<label htmlFor="firstNameInput">First Name</label>
+									<input
+										onChange={this.handleChangeFirstName}
+										type="text"
+										id="firstNameInput"
+										value={firstName.text}
+									/>
+								</div>
+
+								<div className="input-container">
+									<label htmlFor="lastNameInput">Last Name</label>
+									<input
+										onChange={this.handleChangeLastName}
+										type="text"
+										id="lastNameInput"
+										value={lastName.text}
+									/>
+								</div>
+
+								<div className="input-container">
+									<label htmlFor="phoneNumInput">Phone Number</label>
+									<input
+										onChange={this.handleChangePhone}
+										type="tel"
+										id="phoneNumInput"
+										value={phoneNum.text}
+									/>
+								</div>
+
+								<div className="input-container">
+									<label htmlFor="lastNameInput">Email</label>
+									<input
+										onChange={this.handleChangeEmail}
+										type="email"
+										id="emailInput"
+										value={email.text}
+									/>
+								</div>
+
+								<button type="submit" onClick={this.onSubmitAllInfo}>
+									Add Info
+								</button>
+							</div>
+						</fieldset>
 					</form>
-					<DisplayFirstName
-						firstNameArr={firstNameArr}
-						lastNameArr={lastNameArr}
-						phoneNumArr={phoneNumArr}
-						emailArr={emailArr}
-					/>
+					<div className="info-display">
+						<DisplayFirstName
+							firstNameArr={firstNameArr}
+							lastNameArr={lastNameArr}
+							phoneNumArr={phoneNumArr}
+							emailArr={emailArr}
+						/>
+					</div>
 				</div>
 			</>
 		)
