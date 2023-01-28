@@ -83,7 +83,7 @@ class AddExperience extends Component {
 						<label htmlFor="startDateInput">Start Date</label>
 						<input
 							onChange={this.handleChangeStartDate}
-							type="date"
+							type="month"
 							id="startDateInput"
 							value={startDate.text}
 						/>
@@ -91,7 +91,7 @@ class AddExperience extends Component {
 						<label htmlFor="endDateInput">End Date</label>
 						<input
 							onChange={this.handleChangeEndDate}
-							type="date"
+							type="month"
 							id="endDateInput"
 							value={endDate.text}
 						/>

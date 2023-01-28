@@ -33,22 +33,29 @@ class AddAboutMe extends Component {
 		const { aboutMeText, aboutMeArr } = this.state
 		return (
 			<>
-				<div>
+				<div className="sides-container">
 					<form>
-						<label htmlFor="aboutMeInput">About Me</label>
-						<textarea
-							onChange={this.handleChangeAboutMe}
-							id="aboutMe"
-							value={aboutMeText.text}
-							name="aboutMeTextArea"
-						>
-							This is placeholder text
-						</textarea>
-						<button type="submit" onClick={this.onSubmitAboutMe}>
-							Add About Me
-						</button>
+						<fieldset>
+							<legend>About you</legend>
+							<div className="input-main-container">
+								<div className="input-container">
+									<label htmlFor="aboutMeInput">About Me</label>
+									<textarea
+										onChange={this.handleChangeAboutMe}
+										id="aboutMe"
+										value={aboutMeText.text}
+										name="aboutMeTextArea"
+									></textarea>
+								</div>
+								<button type="submit" onClick={this.onSubmitAboutMe}>
+									Add About Me
+								</button>
+							</div>
+						</fieldset>
 					</form>
-					<DisplayAboutMe aboutMeArr={aboutMeArr} />
+					<div className="info-display">
+						<DisplayAboutMe aboutMeArr={aboutMeArr} />
+					</div>
 				</div>
 			</>
 		)

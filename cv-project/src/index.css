@@ -68,4 +68,11 @@ label {
 
 .contact-info {
 	font-size: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.about-me-container {
+	padding: 20px;
 }
