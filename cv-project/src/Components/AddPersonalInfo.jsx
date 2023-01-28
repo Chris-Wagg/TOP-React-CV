@@ -27,14 +27,6 @@ class AddPersonalInfo extends Component {
 		})
 	}
 
-	handleChangeLastName = (e) => {
-		this.setState({
-			lastName: {
-				text: e.target.value,
-				id: this.state.lastName.id,
-			},
-		})
-	}
 	handleChangePhone = (e) => {
 		this.setState({
 			phoneNum: {
@@ -57,8 +49,7 @@ class AddPersonalInfo extends Component {
 		this.setState({
 			firstNameArr: this.state.firstNameArr.concat(this.state.firstName),
 			firstName: { text: '', id: uniqid() },
-			lastNameArr: this.state.lastNameArr.concat(this.state.lastName),
-			lastName: { text: '', id: uniqid() },
+
 			phoneNumArr: this.state.phoneNumArr.concat(this.state.phoneNum),
 			phoneNum: { text: '', id: uniqid() },
 			emailArr: this.state.emailArr.concat(this.state.email),
@@ -70,8 +61,7 @@ class AddPersonalInfo extends Component {
 		const {
 			firstName,
 			firstNameArr,
-			lastName,
-			lastNameArr,
+
 			email,
 			emailArr,
 			phoneNum,
@@ -91,16 +81,6 @@ class AddPersonalInfo extends Component {
 										type="text"
 										id="firstNameInput"
 										value={firstName.text}
-									/>
-								</div>
-
-								<div className="input-container">
-									<label htmlFor="lastNameInput">Last Name</label>
-									<input
-										onChange={this.handleChangeLastName}
-										type="text"
-										id="lastNameInput"
-										value={lastName.text}
 									/>
 								</div>
 
@@ -133,7 +113,6 @@ class AddPersonalInfo extends Component {
 					<div className="info-display">
 						<DisplayFirstName
 							firstNameArr={firstNameArr}
-							lastNameArr={lastNameArr}
 							phoneNumArr={phoneNumArr}
 							emailArr={emailArr}
 						/>

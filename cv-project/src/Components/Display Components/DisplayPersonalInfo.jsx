@@ -1,5 +1,5 @@
 export default function DisplayPersonalInfo(props) {
-	const { firstNameArr, lastNameArr, phoneNumArr, emailArr } = props
+	const { firstNameArr, phoneNumArr, emailArr } = props
 
 	return (
 		<div className="info-container">
