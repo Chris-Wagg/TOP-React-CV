@@ -12,16 +12,20 @@ code {
 		monospace;
 }
 
-.testClass {
-	background-color: red;
-}
-
 fieldset {
 	border: 0;
 }
 
 label {
 	font-weight: 500;
+}
+
+.main-container {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	padding: 20px;
+	border: 1px solid red;
 }
 
 .input-main-container {
@@ -34,8 +38,18 @@ label {
 .sides-container {
 	display: flex;
 	border: 1px solid red;
+	justify-content: space-around;
 }
 
 .info-display {
 	border: 1px solid red;
+	width: 60vw;
+	text-align: center;
+}
+
+.input-container {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	width: 40vw;
 }

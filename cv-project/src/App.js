@@ -13,21 +13,12 @@ import DisplaySkills from './Components/Display Components/DisplaySkills'
 export default function App() {
 	return (
 		<>
-			<div className="maincontainer">
-				<div className="right-container">
-					<AddPersonalInfo />
-					<AddAboutMe />
-					<AddExperience />
-					<AddSkills />
-					<AddProjects />
-				</div>
-				<div className="left-container">
-					{/* <DisplayAboutMe />
-					<DisplayExperience />
-					<DisplayPersonalInfo />
-					<DisplayProjects />
-					<DisplaySkills /> */}
-				</div>
+			<div className="main-container">
+				<AddPersonalInfo />
+				<AddAboutMe />
+				<AddExperience />
+				<AddSkills />
+				<AddProjects />
 			</div>
 		</>
 	)

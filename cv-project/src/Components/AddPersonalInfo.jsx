@@ -105,7 +105,7 @@ class AddPersonalInfo extends Component {
 								</div>
 
 								<div className="input-container">
-									<label htmlFor="phoneNumInput">Phone Number</label>
+									<label htmlFor="phoneNumInput">Phone</label>
 									<input
 										onChange={this.handleChangePhone}
 										type="tel"

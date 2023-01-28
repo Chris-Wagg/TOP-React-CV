@@ -2,19 +2,24 @@ export default function DisplayPersonalInfo(props) {
 	const { firstNameArr, lastNameArr, phoneNumArr, emailArr } = props
 
 	return (
-		<ul>
-			{firstNameArr.map((e) => {
-				return <li key={e.id}>{e.text}</li>
-			})}
-			{lastNameArr.map((e) => {
-				return <li key={e.id}>{e.text}</li>
-			})}
-			{phoneNumArr.map((e) => {
-				return <li key={e.id}>{e.text}</li>
-			})}
-			{emailArr.map((e) => {
-				return <li key={e.id}>{e.text}</li>
-			})}
-		</ul>
+		<div className="info-container">
+			<div className="name">
+				{firstNameArr.map((e) => {
+					return <li key={e.id}>{e.text}</li>
+				})}
+			</div>
+			<div className="contact-info">
+				<div className="phone-number">
+					{phoneNumArr.map((e) => {
+						return <li key={e.id}>{e.text}</li>
+					})}
+				</div>
+				<div className="email">
+					{emailArr.map((e) => {
+						return <li key={e.id}>{e.text}</li>
+					})}
+				</div>
+			</div>
+		</div>
 	)
 }
