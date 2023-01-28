@@ -33,20 +33,29 @@ class AddAboutMe extends Component {
 		const { skillsText, skillsArr } = this.state
 		return (
 			<>
-				<div>
+				<div className="sides-container">
 					<form>
-						<label htmlFor="aboutMeInput">Skills</label>
-						<input
-							onChange={this.handleChangeAboutMe}
-							id="Skills"
-							value={skillsText.text}
-							name="skillsinput"
-						/>
-						<button type="submit" onClick={this.onSubmitSkills}>
-							Add Skills
-						</button>
+						<fieldset>
+							<legend>Skills</legend>
+							<div className="input-main-container">
+								<div className="input-container">
+									<label htmlFor="aboutMeInput">Skills</label>
+									<input
+										onChange={this.handleChangeAboutMe}
+										id="Skills"
+										value={skillsText.text}
+										name="skillsinput"
+									/>
+								</div>
+								<button type="submit" onClick={this.onSubmitSkills}>
+									Add Skills
+								</button>
+							</div>
+						</fieldset>
 					</form>
-					<DisplaySkills skillsArr={skillsArr} />
+					<div className="info-display">
+						<DisplaySkills skillsArr={skillsArr} />
+					</div>
 				</div>
 			</>
 		)

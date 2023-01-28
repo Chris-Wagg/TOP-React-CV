@@ -78,50 +78,62 @@ class AddExperience extends Component {
 		} = this.state
 		return (
 			<>
-				<div>
+				<div className="sides-container">
 					<form>
-						<label htmlFor="startDateInput">Start Date</label>
-						<input
-							onChange={this.handleChangeStartDate}
-							type="month"
-							id="startDateInput"
-							value={startDate.text}
-						/>
-						{/* ------------------------------------------ */}
-						<label htmlFor="endDateInput">End Date</label>
-						<input
-							onChange={this.handleChangeEndDate}
-							type="month"
-							id="endDateInput"
-							value={endDate.text}
-						/>
-						{/* ------------------------------------------ */}
-						<label htmlFor="roleInput">Role</label>
-						<input
-							onChange={this.handleChangeRole}
-							type="text"
-							id="roleInput"
-							value={role.text}
-						/>
-						{/* ------------------------------------------ */}
-						<label htmlFor="aboutRoleInput">About role</label>
-						<textarea
-							onChange={this.handleChangeAboutRole}
-							id="aboutRoleInput"
-							value={aboutRole.text}
-							name="aboutRoleInput"
-						></textarea>
-						{/* ------------------------------------------ */}
-						<button type="submit" onClick={this.onSubmitExperience}>
-							Add Info
-						</button>
+						<fieldset>
+							<legend>Experience</legend>
+
+							<div className="input-main-container">
+								<div className="input-container">
+									<label htmlFor="startDateInput">Start Date</label>
+									<input
+										onChange={this.handleChangeStartDate}
+										type="month"
+										id="startDateInput"
+										value={startDate.text}
+									/>
+								</div>
+								<div className="input-container">
+									<label htmlFor="endDateInput">End Date</label>
+									<input
+										onChange={this.handleChangeEndDate}
+										type="month"
+										id="endDateInput"
+										value={endDate.text}
+									/>
+								</div>
+								<div className="input-container">
+									<label htmlFor="roleInput">Role</label>
+									<input
+										onChange={this.handleChangeRole}
+										type="text"
+										id="roleInput"
+										value={role.text}
+									/>
+								</div>
+								<div className="input-container">
+									<label htmlFor="aboutRoleInput">About role</label>
+									<textarea
+										onChange={this.handleChangeAboutRole}
+										id="aboutRoleInput"
+										value={aboutRole.text}
+										name="aboutRoleInput"
+									></textarea>
+								</div>
+								<button type="submit" onClick={this.onSubmitExperience}>
+									Add Info
+								</button>
+							</div>
+						</fieldset>
 					</form>
-					<DisplayExperience
-						startDateArr={startDateArr}
-						endDateArr={endDateArr}
-						roleArr={roleArr}
-						aboutRoleArr={aboutRoleArr}
-					/>
+					<div className="info-display">
+						<DisplayExperience
+							startDateArr={startDateArr}
+							endDateArr={endDateArr}
+							roleArr={roleArr}
+							aboutRoleArr={aboutRoleArr}
+						/>
+					</div>
 				</div>
 			</>
 		)
