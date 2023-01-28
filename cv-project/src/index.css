@@ -53,3 +53,19 @@ label {
 	gap: 10px;
 	width: 40vw;
 }
+
+.info-container {
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+	align-items: center;
+}
+
+.name {
+	font-size: 48px;
+	font-weight: 500;
+}
+
+.contact-info {
+	font-size: 24px;
+}

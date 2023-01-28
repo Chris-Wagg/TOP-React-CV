@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import uniqid from 'uniqid'
 
-import DisplayFirstName from './Display Components/DisplayPersonalInfo'
+import DisplayPersonalInfo from './Display Components/DisplayPersonalInfo'
 
 class AddPersonalInfo extends Component {
 	constructor() {
 		super()
 		this.state = {
-			firstName: { text: '', id: uniqid() },
-			firstNameArr: [],
+			name: { text: '', id: uniqid() },
+			nameArr: [],
 			lastName: { text: '', id: uniqid() },
 			lastNameArr: [],
 			phoneNum: { text: '', id: uniqid() },
@@ -18,11 +18,11 @@ class AddPersonalInfo extends Component {
 		}
 	}
 
-	handleChangeFirstName = (e) => {
+	handleChangeName = (e) => {
 		this.setState({
-			firstName: {
+			name: {
 				text: e.target.value,
-				id: this.state.firstName.id,
+				id: this.state.name.id,
 			},
 		})
 	}
@@ -47,8 +47,8 @@ class AddPersonalInfo extends Component {
 	onSubmitAllInfo = (e) => {
 		e.preventDefault()
 		this.setState({
-			firstNameArr: this.state.firstNameArr.concat(this.state.firstName),
-			firstName: { text: '', id: uniqid() },
+			nameArr: this.state.nameArr.concat(this.state.name),
+			name: { text: '', id: uniqid() },
 
 			phoneNumArr: this.state.phoneNumArr.concat(this.state.phoneNum),
 			phoneNum: { text: '', id: uniqid() },
@@ -59,8 +59,8 @@ class AddPersonalInfo extends Component {
 
 	render() {
 		const {
-			firstName,
-			firstNameArr,
+			name,
+			nameArr,
 
 			email,
 			emailArr,
@@ -75,12 +75,12 @@ class AddPersonalInfo extends Component {
 							<legend>Personal Info</legend>
 							<div className="input-main-container">
 								<div className="input-container">
-									<label htmlFor="firstNameInput">First Name</label>
+									<label htmlFor="nameInput">Name</label>
 									<input
-										onChange={this.handleChangeFirstName}
+										onChange={this.handleChangeName}
 										type="text"
-										id="firstNameInput"
-										value={firstName.text}
+										id="nameInput"
+										value={name.text}
 									/>
 								</div>
 
@@ -111,8 +111,8 @@ class AddPersonalInfo extends Component {
 						</fieldset>
 					</form>
 					<div className="info-display">
-						<DisplayFirstName
-							firstNameArr={firstNameArr}
+						<DisplayPersonalInfo
+							nameArr={nameArr}
 							phoneNumArr={phoneNumArr}
 							emailArr={emailArr}
 						/>
