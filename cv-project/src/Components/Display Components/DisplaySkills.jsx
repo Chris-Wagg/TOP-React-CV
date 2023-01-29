@@ -4,7 +4,7 @@ export default function DisplaySkills(props) {
 	return (
 		<div className="info-container">
 			<div className="skill-item">
-				skill
+				{/* skill */}
 				<ul>
 					{skillsArr.map((e) => {
 						return <li key={e.id}>{e.text}</li>

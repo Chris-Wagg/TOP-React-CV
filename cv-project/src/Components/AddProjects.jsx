@@ -65,39 +65,52 @@ class AddProjects extends Component {
 		} = this.state
 		return (
 			<>
-				<div>
+				<div className="sides-container">
 					<form>
-						<label htmlFor="aboutMeInput">Project Name</label>
-						<input
-							onChange={this.handleChangeAddProject}
-							type="text"
-							id="projectName"
-							value={projectText.text}
-						/>
-						<label htmlFor="aboutMeInput">Project Link</label>
-						<input
-							onChange={this.handleChangeAddProjectURL}
-							type="url"
-							id="projectUrl"
-							value={projectURLText.text}
-						/>
-						<label htmlFor="aboutMeInput">about the project</label>
-						<textarea
-							onChange={this.handleChangeAddAboutProject}
-							type="text"
-							id="aboutProject"
-							name="aboutProjectText"
-							value={aboutProjectText.text}
-						></textarea>
-						<button type="submit" onClick={this.onSubmitProject}>
-							Add Project
-						</button>
+						<fieldset>
+							<legend>Projects</legend>
+							<div className="input-main-container">
+								<div className="input-container">
+									<label htmlFor="aboutMeInput">Project Name</label>
+									<input
+										onChange={this.handleChangeAddProject}
+										type="text"
+										id="projectName"
+										value={projectText.text}
+									/>
+								</div>
+								<div className="input-container">
+									<label htmlFor="aboutMeInput">Project Link</label>
+									<input
+										onChange={this.handleChangeAddProjectURL}
+										type="url"
+										id="projectUrl"
+										value={projectURLText.text}
+									/>
+								</div>
+								<div className="input-container">
+									<label htmlFor="aboutMeInput">Project info</label>
+									<textarea
+										onChange={this.handleChangeAddAboutProject}
+										type="text"
+										id="aboutProject"
+										name="aboutProjectText"
+										value={aboutProjectText.text}
+									></textarea>
+								</div>
+								<button type="submit" onClick={this.onSubmitProject}>
+									Add Project
+								</button>
+							</div>
+						</fieldset>
 					</form>
-					<DisplayProjects
-						projectArr={projectArr}
-						projectURLArr={projectURLArr}
-						aboutProjectArr={aboutProjectArr}
-					/>
+					<div className="info-display">
+						<DisplayProjects
+							projectArr={projectArr}
+							projectURLArr={projectURLArr}
+							aboutProjectArr={aboutProjectArr}
+						/>
+					</div>
 				</div>
 			</>
 		)
