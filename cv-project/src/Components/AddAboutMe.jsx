@@ -1,65 +1,40 @@
-import React, { Component } from 'react'
-import uniqid from 'uniqid'
+import React, { useState } from 'react'
 
 import DisplayAboutMe from './Display Components/DisplayAboutMe'
 
-class AddAboutMe extends Component {
-	constructor() {
-		super()
-		this.state = {
-			aboutMeText: { text: '', id: uniqid() },
-			aboutMeArr: [],
-		}
-	}
+export default function AddAboutMe() {
+	const [aboutMeText, setAboutMeText] = useState('')
 
-	handleChangeAboutMe = (e) => {
-		this.setState({
-			aboutMeText: {
-				text: e.target.value,
-				id: this.state.aboutMeText.id,
-			},
-		})
-	}
-
-	onSubmitAboutMe = (e) => {
+	const onSubmitAboutMe = (e) => {
 		e.preventDefault()
-		this.setState({
-			aboutMeArr: this.state.aboutMeArr.concat(this.state.aboutMeText),
-			aboutMeText: { text: '', id: uniqid() },
-		})
+		setAboutMeText(document.getElementById('aboutMe').value)
 	}
 
-	render() {
-		const { aboutMeText, aboutMeArr } = this.state
-		return (
-			<>
-				<div className="sides-container">
-					<form>
-						<fieldset>
-							<legend>About you</legend>
-							<div className="input-main-container">
-								<div className="input-container">
-									<label htmlFor="aboutMeInput">About Me</label>
-									<textarea
-										onChange={this.handleChangeAboutMe}
-										id="aboutMe"
-										value={aboutMeText.text}
-										name="aboutMeTextArea"
-									></textarea>
-								</div>
-								<button type="submit" onClick={this.onSubmitAboutMe}>
-									Add About Me
-								</button>
+	return (
+		<>
+			<div className="sides-container">
+				<form>
+					<fieldset>
+						<legend>About you</legend>
+						<div className="input-main-container">
+							<div className="input-container">
+								<label htmlFor="aboutMeInput">About Me</label>
+								<textarea id="aboutMe" name="aboutMeTextArea"></textarea>
 							</div>
-						</fieldset>
-					</form>
-					<div className="info-display">
-						<DisplayAboutMe aboutMeArr={aboutMeArr} />
-					</div>
+							<button
+								id="aboutMeSubmitButton"
+								type="submit"
+								onClick={onSubmitAboutMe}
+							>
+								Add About Me
+							</button>
+						</div>
+					</fieldset>
+				</form>
+				<div className="info-display">
+					<DisplayAboutMe aboutMeText={aboutMeText} />
 				</div>
-			</>
-		)
-	}
+			</div>
+		</>
+	)
 }
-
-export default AddAboutMe
