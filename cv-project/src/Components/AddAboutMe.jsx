@@ -8,6 +8,7 @@ export default function AddAboutMe() {
 	const onSubmitAboutMe = (e) => {
 		e.preventDefault()
 		setAboutMeText(document.getElementById('aboutMe').value)
+		document.getElementById('aboutMe').value = ''
 	}
 
 	return (
