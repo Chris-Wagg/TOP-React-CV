@@ -1,65 +1,36 @@
-import React, { Component } from 'react'
-import uniqid from 'uniqid'
+import React, { useState } from 'react'
 
 import DisplaySkills from './Display Components/DisplaySkills'
 
-class AddAboutMe extends Component {
-	constructor() {
-		super()
-		this.state = {
-			skillsText: { text: '', id: uniqid() },
-			skillsArr: [],
-		}
-	}
+export default function AddSkills() {
+	const [skillsText, setSkillsText] = useState('')
 
-	handleChangeAboutMe = (e) => {
-		this.setState({
-			skillsText: {
-				text: e.target.value,
-				id: this.state.skillsText.id,
-			},
-		})
-	}
-
-	onSubmitSkills = (e) => {
+	const onSubmitSkills = (e) => {
 		e.preventDefault()
-		this.setState({
-			skillsArr: this.state.skillsArr.concat(this.state.skillsText),
-			skillsText: { text: '', id: uniqid() },
-		})
+		setSkillsText(document.getElementById('skills').value)
+		document.getElementById('skills').value = ''
 	}
-
-	render() {
-		const { skillsText, skillsArr } = this.state
-		return (
-			<>
-				<div className="sides-container">
-					<form>
-						<fieldset>
-							<legend>Skills</legend>
-							<div className="input-main-container">
-								<div className="input-container">
-									<label htmlFor="aboutMeInput">Skills</label>
-									<input
-										onChange={this.handleChangeAboutMe}
-										id="Skills"
-										value={skillsText.text}
-										name="skillsinput"
-									/>
-								</div>
-								<button type="submit" onClick={this.onSubmitSkills}>
-									Add Skills
-								</button>
+	return (
+		<>
+			<div className="sides-container">
+				<form>
+					<fieldset>
+						<legend>Skills</legend>
+						<div className="input-main-container">
+							<div className="input-container">
+								<label htmlFor="skillsInput">Skills</label>
+								<input id="skills" name="skillsinput" />
 							</div>
-						</fieldset>
-					</form>
-					<div className="info-display">
-						<DisplaySkills skillsArr={skillsArr} />
-					</div>
+							<button type="submit" onClick={onSubmitSkills}>
+								Add Skills
+							</button>
+						</div>
+					</fieldset>
+				</form>
+				<div className="info-display">
+					<DisplaySkills skillsText={skillsText} />
 				</div>
-			</>
-		)
-	}
+			</div>
+		</>
+	)
 }
-
-export default AddAboutMe
